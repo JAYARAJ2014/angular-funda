@@ -11,7 +11,7 @@ export class EventsListComponent {
       id: 1,
       name: ' Angular Connect',
       date: '9/26/2020',
-      time: '10:00 am',
+      time: '8:00 am',
       price: '9.99',
       imageUrl: '/assets/images/angularconnect-shield.png',
       location: {
@@ -32,7 +32,7 @@ export class EventsListComponent {
       id: 3,
       name: ' Vegas Connect ',
       date: '01/26/2019',
-      time: '10:00 am',
+      time: '9:00 am',
       price: '129.99',
       imageUrl: '/assets/images/ng-vegas.png',
       onlineUrl: 'http://ngvegas.com/connect'
