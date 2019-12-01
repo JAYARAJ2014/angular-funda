@@ -44,7 +44,8 @@ export class EventsListComponent {
     address : 'Somehwere in Vegas',
     city: 'LA',
     country: 'USA'
-  }
+  },
+  onlineUrl: 'http://ngvegas.com/connect'
 },
 {
   id: 4,
