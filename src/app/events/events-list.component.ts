@@ -26,12 +26,7 @@ export class EventsListComponent {
     date: '12/26/2019',
     time : '10:00 am',
     price : '29.99',
-    imageUrl : '/assets/images/ng-conf.png',
-    location: {
-      address : 'Somehwere in Durham',
-      city: 'Durham',
-      country: 'USA'
-    }
+    imageUrl : '/assets/images/ng-conf.png'
 },
 {
   id: 3,
@@ -40,11 +35,6 @@ export class EventsListComponent {
   time : '10:00 am',
   price : '129.99',
   imageUrl : '/assets/images/ng-vegas.png',
-  location: {
-    address : 'Somehwere in Vegas',
-    city: 'LA',
-    country: 'USA'
-  },
   onlineUrl: 'http://ngvegas.com/connect'
 },
 {

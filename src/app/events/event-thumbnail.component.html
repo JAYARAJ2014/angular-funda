@@ -3,7 +3,7 @@
   <div>Date: {{ eventChild.date }}</div>
   <div>Time: {{ eventChild.time }}</div>
   <div>Price: ${{ eventChild.price }}</div>
-  <div>
+  <div  *ngIf="eventChild?.location">
     <span>Location: {{ eventChild.location.address }}</span>
     <span class="pad-left">{{ eventChild.location.city }},{{ eventChild.location.country }} </span>
   </div>
