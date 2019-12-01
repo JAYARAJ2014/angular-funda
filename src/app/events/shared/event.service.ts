@@ -7,6 +7,7 @@ export class EventService {
     return EVENTS;
   }
   getEvent(id: number){
+    console.log('id in service is ' + id );
     return EVENTS.find( event => event.id === id);
   }
 }
