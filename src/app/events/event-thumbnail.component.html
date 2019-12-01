@@ -1,14 +1,14 @@
 <div class="well hoverwell thumbnail">
-  <h2>{{ eventChild.name }}</h2>
-  <div>Date: {{ eventChild.date }}</div>
-  <div>Time: {{ eventChild.time }}</div>
-  <div>Price: ${{ eventChild.price }}</div>
-  <div  *ngIf="eventChild?.location">
-    <span>Location: {{ eventChild.location.address }}</span>
-    <span class="pad-left">{{ eventChild.location.city }},{{ eventChild.location.country }} </span>
+  <h2>{{ eventChild?.name }}</h2>
+  <div>Date: {{ eventChild?.date }}</div>
+  <div>Time: {{ eventChild?.time }}</div>
+  <div>Price: ${{ eventChild?.price }}</div>
+  <div  [hidden]="!eventChild?.location">
+    <span>Location: {{ eventChild?.location?.address }}</span>
+    <span class="pad-left">{{ eventChild?.location?.city }},{{ eventChild?.location?.country }} </span>
   </div>
   <div>
-    <span *ngIf="eventChild?.onlineUrl">Online Url: {{eventChild.onlineUrl}}</span>
+    <span *ngIf="eventChild?.onlineUrl">Online Url: {{eventChild?.onlineUrl}}</span>
   </div>
 
 </div>
