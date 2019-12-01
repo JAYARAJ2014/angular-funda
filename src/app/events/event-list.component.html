@@ -1,6 +1,9 @@
 <div>
   <h1>Upcoming events</h1>
   <hr />
- <event-thumbnail
- [eventChild]="eventParent"></event-thumbnail>
+  <div class="row">
+    <div class="col-md-5" *ngFor="let eventParent of events">
+      <event-thumbnail [eventChild]="eventParent"></event-thumbnail>
+    </div>
+  </div>
 </div>

@@ -6,7 +6,8 @@ import { Component } from '@angular/core';
 })
 export class EventsListComponent {
 
-  eventParent = {
+  events = [
+    {
       id: 1,
       name : ' Angular Connect',
       date: '9/26/2020',
@@ -18,7 +19,47 @@ export class EventsListComponent {
         city: 'Raleigh',
         country: 'USA'
       }
-  };
+  },
+  {
+    id: 2,
+    name : ' ngConf',
+    date: '12/26/2019',
+    time : '10:00 am',
+    price : '29.99',
+    imageUrl : '/assets/images/ng-conf.png',
+    location: {
+      address : 'Somehwere in Durham',
+      city: 'Durham',
+      country: 'USA'
+    }
+},
+{
+  id: 3,
+  name : ' Vegas Connect ',
+  date: '01/26/2019',
+  time : '10:00 am',
+  price : '129.99',
+  imageUrl : '/assets/images/ng-vegas.png',
+  location: {
+    address : 'Somehwere in Vegas',
+    city: 'LA',
+    country: 'USA'
+  }
+},
+{
+  id: 4,
+  name : ' Newzeland Connect ',
+  date: '03/26/2019',
+  time : '10:00 am',
+  price : '329.99',
+  imageUrl : '/assets/images/ng-nl.png',
+  location: {
+    address : 'Somehwere in NZ',
+    city: 'NZ City',
+    country: 'NZ'
+  }
+}
+];
 
   handleEventClicked(data) {
     console.log('Received' + data);
