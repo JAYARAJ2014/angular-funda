@@ -6,7 +6,7 @@ export class EventService {
 
   getEvents(): any {
     const subject = new Subject(); // observable
-    setTimeout(() => { subject.next(EVENTS); subject.complete(); }, 1000);
+    setTimeout(() => { subject.next(EVENTS); subject.complete(); }, 3000);
     return subject;
   }
   getEvent(id: number) {
