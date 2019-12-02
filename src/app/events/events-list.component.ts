@@ -9,12 +9,12 @@ export class EventsListComponent implements OnInit{
 
   constructor(private eventService: EventService, private toastr: ToastrService) {
   }
-  events: any[];
+  events: any;
 
   handleClick(data) {
     this.toastr.success(data);
   }
   ngOnInit() {
-    this.events = this.eventService.getEvents();
+     this.eventService.getEvents().subscribe(events => {this.events = events; } );
   }
 }
