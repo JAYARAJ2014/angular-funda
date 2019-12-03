@@ -6,4 +6,8 @@ import { Component } from '@angular/core';
 
 export class LoginComponent {
 
+
+  login(formValues) {
+    console.log(formValues);
+  }
 }
