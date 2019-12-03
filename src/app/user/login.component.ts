@@ -8,6 +8,7 @@ export class LoginComponent {
 
 
   login(formValues) {
-    console.log(formValues);
+    console.log('User Name: ' + formValues.userName);
+    console.log('Password:  ' + formValues.password);
   }
 }
