@@ -39,4 +39,14 @@ export class ProfileComponent implements OnInit {
     }
   }
 
+  validateFirstName(): boolean {
+    let form = this.profileForm.controls;
+    return (form.firstName.invalid && form.firstName.touched);
+  }
+
+  validateLastName(): boolean {
+    let form = this.profileForm.controls;
+    return (form.lastName.invalid && form.lastName.touched);
+  }
+
 }
