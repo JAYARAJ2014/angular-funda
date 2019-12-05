@@ -7,7 +7,7 @@ import { Router } from '@angular/router';
   templateUrl: './profile.component.html',
   styles:  [`
       em { float: right; color: #E05C65; padding-left: 10px;}
-      .error input {background-color:orange;}
+      .error input {background-color:#ffcccc;}
   `]
 })
 export class ProfileComponent implements OnInit {

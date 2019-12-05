@@ -9,6 +9,7 @@
         <div class="form-group" [ngClass]="{'error':
          validateFirstName()}">
           <label for="firstNameId">First Name:</label>
+          <em *ngIf="validateFirstName()">Required</em>
           <input id="firstNameId"
           formControlName="firstName"
           type="text"
@@ -18,6 +19,7 @@
         <div class="form-lastNameId" [ngClass]="{'error':
         validateLastName()}">
           <label for="lastName">Last Name:</label>
+          <em *ngIf="validateLastName()">Required</em>
           <input id="lastNameId"
           formControlName="lastName"
           type="text" class="form-control"
