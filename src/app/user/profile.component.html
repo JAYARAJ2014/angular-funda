@@ -6,7 +6,9 @@
       [formGroup]="profileForm"
       autocomplete="off"
       novalidate>
-        <div class="form-group">
+        <div class="form-group" [ngClass]="{'error':
+         profileForm.controls.firstName.invalid
+        && profileForm.controls.firstName.touched}">
           <label for="firstNameId">First Name:</label>
           <input id="firstNameId"
           formControlName="firstName"
@@ -14,7 +16,9 @@
           class="form-control"
            placeholder="First Name..." />
         </div>
-        <div class="form-lastNameId">
+        <div class="form-lastNameId" [ngClass]="{'error':
+         profileForm.controls.lastName.invalid
+         && profileForm.controls.lastName.touched}">
           <label for="lastName">Last Name:</label>
           <input id="lastNameId"
           formControlName="lastName"
