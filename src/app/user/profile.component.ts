@@ -29,6 +29,7 @@ export class ProfileComponent implements OnInit {
   saveProfile(formValues) {
     console.log('saveProfile invoked');
     this.authService.updateCurrentUser(formValues.firstName, formValues.lastName);
+    this.router.navigate(['events']);
   }
 
 }
