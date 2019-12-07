@@ -20,9 +20,9 @@ export class ProfileComponent implements OnInit {
 
     this.profileForm = new FormGroup({
       firstName: new FormControl
-        (this.authService.currentUser.firstName, Validators.required),
+        (this.authService.currentUser.firstName, [Validators.required, Validators.pattern('[a-zA-Z].*')]),
       lastName: new FormControl
-        (this.authService.currentUser.lastName, Validators.required)
+        (this.authService.currentUser.lastName, [Validators.required, Validators.pattern('[a-zA-Z].*')])
     });
 
   }
@@ -40,12 +40,12 @@ export class ProfileComponent implements OnInit {
   }
 
   validateFirstName(): boolean {
-    let form = this.profileForm.controls;
+    const form = this.profileForm.controls;
     return (form.firstName.invalid && form.firstName.touched);
   }
 
   validateLastName(): boolean {
-    let form = this.profileForm.controls;
+    const form = this.profileForm.controls;
     return (form.lastName.invalid && form.lastName.touched);
   }
 

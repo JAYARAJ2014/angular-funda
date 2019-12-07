@@ -9,7 +9,8 @@
         <div class="form-group" [ngClass]="{'error':
          validateFirstName()}">
           <label for="firstNameId">First Name:</label>
-          <em *ngIf="validateFirstName()">Required</em>
+          <em *ngIf="validateFirstName() && profileForm.controls.firstName.errors.required">Required</em>
+          <em *ngIf="validateFirstName() &&  profileForm.controls.firstName.errors.pattern">Must begin with a letter</em>
           <input id="firstNameId"
           formControlName="firstName"
           type="text"
@@ -19,7 +20,9 @@
         <div class="form-lastNameId" [ngClass]="{'error':
         validateLastName()}">
           <label for="lastName">Last Name:</label>
-          <em *ngIf="validateLastName()">Required</em>
+          <em *ngIf="validateLastName() && profileForm.controls.lastName.errors.required">Required</em>
+          <em *ngIf="validateLastName() &&  profileForm.controls.lastName.errors.pattern">Must begin with a letter</em>
+
           <input id="lastNameId"
           formControlName="lastName"
           type="text" class="form-control"
