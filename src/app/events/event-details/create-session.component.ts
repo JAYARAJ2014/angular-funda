@@ -6,7 +6,7 @@ import { ISession } from '..';
   templateUrl: './create-session.component.html',
   styles: [`
   em { float: right; color: #E05C65; padding-left: 10px;}
-  .error input {background-color:#ffcccc;}
+  .error input, .error select, .error textarea {background-color:#E3C3C5;}
 `]
 })
 
@@ -40,6 +40,7 @@ export class CreateSessionComponent implements OnInit {
     });
   }
 
+
   saveSession(formValues) {
 
     let session: ISession = {
@@ -51,9 +52,13 @@ export class CreateSessionComponent implements OnInit {
       abstract: formValues.abstract,
       voters: []
     };
-
     console.log(session);
-
   }
+
+  isInvalidAndDirty(control: FormControl): boolean {
+    console.log('control.invalid && control.dirty: ' +  control.invalid  + ' && ' + control.dirty);
+    return (control.invalid && control.dirty);
+  }
+
 }
 
