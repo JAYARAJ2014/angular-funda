@@ -46,7 +46,7 @@ export class CreateSessionComponent implements OnInit {
     let session: ISession = {
       id: undefined,
       name: formValues.name,
-      duration: formValues.duration,
+      duration: +formValues.duration,
       level: formValues.level,
       presenter: formValues.presenter,
       abstract: formValues.abstract,

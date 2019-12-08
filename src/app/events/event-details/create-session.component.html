@@ -60,6 +60,7 @@
     [ngClass]="{error:isInvalidAndDirty(abstract)}"
     >
       <label for="abstract">Abstract:</label>
+      <em *ngIf="isInvalidAndDirty(abstract) && abstract?.errors.maxlength">Cannot exceed 256 chars</em>
       <em *ngIf="isInvalidAndDirty(abstract)">Required</em>
 
       <textarea
