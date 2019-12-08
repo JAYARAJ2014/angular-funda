@@ -60,8 +60,10 @@
     [ngClass]="{error:isInvalidAndDirty(abstract)}"
     >
       <label for="abstract">Abstract:</label>
-      <em *ngIf="isInvalidAndDirty(abstract) && abstract?.errors.maxlength">Cannot exceed 256 chars</em>
-      <em *ngIf="isInvalidAndDirty(abstract)">Required</em>
+      <em *ngIf="abstract.invalid &&  abstract.dirty && abstract?.errors.maxlength">Cannot exceed 256 chars</em>
+      <em *ngIf="abstract.invalid &&  abstract.dirty && abstract?.errors.required">Required</em>
+      <em *ngIf="abstract.invalid &&  abstract.dirty && abstract?.errors.restrictedWords">Restricted words found:
+        {{abstract.errors.restrictedWords}}</em>
 
       <textarea
       [ngClass]="{'error':isInvalidAndDirty(abstract)}"
