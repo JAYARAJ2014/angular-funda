@@ -3,7 +3,11 @@ import { FormControl, Validators, FormGroup } from '@angular/forms';
 import { ISession } from '..';
 
 @Component({
-  templateUrl: './create-session.component.html'
+  templateUrl: './create-session.component.html',
+  styles: [`
+  em { float: right; color: #E05C65; padding-left: 10px;}
+  .error input {background-color:#ffcccc;}
+`]
 })
 
 export class CreateSessionComponent implements OnInit {
