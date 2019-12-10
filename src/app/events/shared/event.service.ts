@@ -4,6 +4,10 @@ import { IEvent } from './event.model';
 
 @Injectable() // important for services
 export class EventService {
+  updateEvent(event: IEvent) {
+    const idx = EVENTS.findIndex(x => x.id === event.id);
+    EVENTS[idx] = event;
+  }
 
   getEvents(): Observable<IEvent[]> {
     const subject = new Subject<IEvent[]>(); // observable
@@ -22,7 +26,7 @@ export class EventService {
     EVENTS.push(event);
   }
 }
-const EVENTS: IEvent[] =  [
+const EVENTS: IEvent[] = [
   {
     id: 1,
     name: 'Angular Connect',

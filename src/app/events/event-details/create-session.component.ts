@@ -1,8 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { FormControl, Validators, FormGroup, ControlContainer } from '@angular/forms';
 import { ISession, restrictedWords } from '../shared/index';
 
 @Component({
+  // tslint:disable-next-line: component-selector
+  selector: 'create-session',
   templateUrl: './create-session.component.html',
   styles: [`
   em { float: right; color: #E05C65; padding-left: 10px;}
@@ -12,12 +14,15 @@ import { ISession, restrictedWords } from '../shared/index';
 
 export class CreateSessionComponent implements OnInit {
 
+  @Output() newSessionEntered = new EventEmitter();
+  @Output() cancelAdd = new EventEmitter();
   newSessionForm: FormGroup;
   name: FormControl;
   presenter: FormControl;
   duration: FormControl;
   level: FormControl;
   abstract: FormControl;
+
 
   constructor() {
 
@@ -48,7 +53,7 @@ export class CreateSessionComponent implements OnInit {
 
   saveSession(formValues) {
 
-    let session: ISession = {
+    const session: ISession = {
       id: undefined,
       name: formValues.name,
       duration: +formValues.duration,
@@ -58,6 +63,7 @@ export class CreateSessionComponent implements OnInit {
       voters: []
     };
     console.log(session);
+    this.newSessionEntered.emit(session);
   }
 
   isInvalidAndDirty(control: FormControl): boolean {
@@ -65,6 +71,9 @@ export class CreateSessionComponent implements OnInit {
     return (control.invalid && control.dirty);
   }
 
+  cancelClick() {
+    this.cancelAdd.emit();
+  }
 
 
 }
