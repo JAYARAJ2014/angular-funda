@@ -1,7 +1,11 @@
 <div (click)="toggleContent()" class="well pointable">
   <i [ngClass]="visible? 'glyphicon glyphicon-triangle-top': 'glyphicon glyphicon-triangle-bottom'"></i>
-  <h4 class="well-title"> {{title}} </h4>
-  <ng-content *ngIf="visible">
+  <h4>
+    <ng-content select="[well-title]">
+
+    </ng-content>
+  </h4>
+  <ng-content select="[well-body]" *ngIf="visible">
 
   </ng-content>
 </div>
