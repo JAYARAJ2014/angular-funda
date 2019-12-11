@@ -8,6 +8,7 @@ import { IEvent, ISession } from '../shared/event.model';
   styles: [`
   .container { padding-left: 20px; padding-right: 20px;}
   .event-image {height: 100px;}
+  button {margin-left:5px;width:120px;}
   a {cursor: pointer}
   `]
 })
@@ -17,6 +18,7 @@ export class EventDetailsComponent implements OnInit {
 
   event: IEvent;
   addMode: boolean;
+  filterBy = 'all';
   constructor(private eventService: EventService,
     private route: ActivatedRoute) {
 
@@ -42,5 +44,7 @@ export class EventDetailsComponent implements OnInit {
   cancelAdd() {
     this.addMode = false;
   }
+
+
 
 }
