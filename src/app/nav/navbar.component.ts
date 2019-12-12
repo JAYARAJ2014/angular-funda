@@ -19,7 +19,7 @@ export class NavBarComponent {
   searchTerm = '';
   foundSessions: ISession[];
   constructor(public authService: AuthService, private eventService: EventService) {
-
+    
   }
 
   searchSessions(searchTerm) {
