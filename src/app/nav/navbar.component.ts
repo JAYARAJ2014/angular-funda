@@ -17,9 +17,8 @@ li > a.active { color: #F97924;}
 export class NavBarComponent {
 
   searchTerm = '';
-  foundSessions: ISession[];
+  foundSessions: {};
   constructor(public authService: AuthService, private eventService: EventService) {
-    
   }
 
   searchSessions(searchTerm) {
