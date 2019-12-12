@@ -29,7 +29,7 @@
           <li>
             <a [routerLink]="['user/login']"
              *ngIf="!authService.isAuthenticated()">Login</a>
-             
+
             <a [routerLink]="['user/profile']"
             *ngIf="authService.isAuthenticated()"
             [routerLinkActiveOptions]="{exact:true}"
@@ -38,9 +38,10 @@
           </li>
         </ul>
       </div>
-      <form id="searchForm"  class="navbar-form navbar-right"  >
+      <form id="searchForm" (ngSubmit)="searchSessions(searchTerm)" class="navbar-form navbar-right"  >
         <div class="form-group">
-          <input type="text" class="form-control" placeholder="Search Sessions" >
+          <input [(ngModel)]="searchTerm" name="searchTerm"
+          type="text" class="form-control" placeholder="Search Sessions" >
         </div>
         <button class="btn btn-default" >
           Search
