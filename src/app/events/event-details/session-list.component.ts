@@ -12,7 +12,7 @@ import { VoterService } from './voter.service';
 export class SessionListComponent implements OnInit, OnChanges {
 
 
-  constructor(private authService: AuthService, private voterService: VoterService) { }
+  constructor(public authService: AuthService, private voterService: VoterService) { }
 
   @Input() sessions: ISession[];
   @Input() vsibleSessions: ISession[] = [];
