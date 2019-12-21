@@ -28,6 +28,7 @@ import { Error404Component } from './errors/404.component';
 import { appRoutes } from 'src/routes';
 import { AuthService } from './user/auth.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { LocationValidatorDirective } from './events/location-validator.directive';
 
 const toastr: IToaster = window['toastr'];
 const jQuery = window['$'];
@@ -46,7 +47,8 @@ const jQuery = window['$'];
     DurationPipe,
     SimpleModalComponent,
     ModalTriggerDirective,
-    UpvoteComponent
+    UpvoteComponent,
+    LocationValidatorDirective
 
   ],
   imports: [
