@@ -1,5 +1,7 @@
 import { Component, OnInit, Input, OnChanges } from '@angular/core';
 import { ISession } from '../shared';
+import { AuthService } from 'src/app/user/auth.service';
+import { VoterService } from './voter.service';
 
 @Component({
   // tslint:disable-next-line: component-selector
@@ -10,7 +12,7 @@ import { ISession } from '../shared';
 export class SessionListComponent implements OnInit, OnChanges {
 
 
-  constructor() { }
+  constructor(private authService: AuthService, private voterService: VoterService) { }
 
   @Input() sessions: ISession[];
   @Input() vsibleSessions: ISession[] = [];
@@ -25,6 +27,19 @@ export class SessionListComponent implements OnInit, OnChanges {
       this.filterSessions(this.filterBy);
       this.sortBy === 'name' ? this.vsibleSessions.sort(sortByNameAsc) : this.vsibleSessions.sort(sortByVotesDesc)
     }
+  }
+  toggleVote(session: ISession) {
+    if (this.userHasVoted(session)) {
+      this.voterService.deleteVoter(session, this.authService.currentUser.userName);
+    } else {
+      this.voterService.addVoter(session, this.authService.currentUser.userName);
+    }
+    if (this.sortBy === 'votes') {
+      this.vsibleSessions.sort(sortByVotesDesc);
+    }
+  }
+  userHasVoted(session: ISession) {
+   return this.voterService.userHasVoted(session, this.authService.currentUser.userName);
   }
   filterSessions(filter: string) {
     if (filter === 'all') {
